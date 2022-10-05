@@ -1,4 +1,6 @@
-package com.promineotech.jeep.controller.support;
+/*
+ * package com.promineotech.jeep.controller.support;
+ 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -18,3 +20,4 @@ public class BaseTest {
   }//end METHOD getBaseUri
 
 }//end CLASS
+*/
