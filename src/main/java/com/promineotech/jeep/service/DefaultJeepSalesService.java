@@ -10,7 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class DefaultJeepSalesService implements JeepSalesService {
 	
-	//@Override    - gave me an error below and told me to remove the annotation
+	@Override
 	public List<Jeep> fetchJeeps(JeepModel model, String trim){
 		log.info("The fetchJeeps method was called with model={} and trim={}", 
 			model, trim);

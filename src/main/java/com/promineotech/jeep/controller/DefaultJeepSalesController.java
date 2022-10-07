@@ -1,7 +1,6 @@
 package com.promineotech.jeep.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 import com.promineotech.jeep.entity.Jeep;
