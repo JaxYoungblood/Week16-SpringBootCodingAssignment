@@ -12,4 +12,9 @@ public class JeepSales {
     }//end METHOD main
     
     
-}//end CLASS
+}
+
+
+
+// To remind me of the address
+// http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/

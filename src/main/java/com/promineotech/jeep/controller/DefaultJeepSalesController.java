@@ -17,7 +17,7 @@ public class DefaultJeepSalesController implements JeepSalesController {
     @Autowired
     private JeepSalesService jeepSalesService;
 
-    //@Override     - gave me an error below and told me to remove this annotation
+    @Override  
     public List<Jeep> fetchJeeps(JeepModel model, String trim) {
         log.info("model={}, trim={}", model, trim);
         return jeepSalesService.fetchJeeps(model, trim);

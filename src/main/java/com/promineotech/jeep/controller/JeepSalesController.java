@@ -1,11 +1,15 @@
 package com.promineotech.jeep.controller;
 
 import java.util.List;
+//import javax.validation.constraints.Pattern;
+//import org.hibernate.validator.constraints.Length;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
+//import com.promineotech.jeep.Constants;
 import com.promineotech.jeep.entity.Jeep;
 import com.promineotech.jeep.entity.JeepModel;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
@@ -17,12 +21,14 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.servers.Server;
 
-@OpenAPIDefinition(info = @Info(title = "Jeep Sales Service"), servers = {
-        @Server(url = "http://localhost:8080", description = "Local server.")})
-
+@Validated
 @RequestMapping("/jeeps")
+@OpenAPIDefinition(info = @Info(title = "Jeep Sales Service"),
+    servers = {@Server(url = "http://localhost:8080", description = "Local server.")})
+
 public interface JeepSalesController {
-//@formatter:off
+
+    //@formatter:off
     @Operation(
         summary = "Returns a list of Jeeps",
         description = "Returns a list of Jeeps given an optional model and/or trim",
@@ -60,9 +66,17 @@ public interface JeepSalesController {
         }//end parameters
     )//end Operation Annotation
 //@formatter:on
-    @GetMapping
-    @ResponseStatus(code = HttpStatus.OK)
-    List<Jeep> fetchJeeps(@RequestParam JeepModel model, @RequestParam String trim);
-    
-    
-}//end INTERFACE JeepSalesController
+
+
+  @GetMapping
+  @ResponseStatus(code = HttpStatus.OK)
+  List<Jeep> fetchJeeps(
+      @RequestParam(required = false) 
+        JeepModel model, 
+      //@Length(max = Constants.TRIM_MAX_LENGTH)
+      //@Pattern(regexp = "[\\w\\s]*")
+      @RequestParam(required = false) 
+        String trim);
+
+
+}// end INTERFACE JeepSalesController
