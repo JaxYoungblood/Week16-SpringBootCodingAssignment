@@ -8,6 +8,7 @@ import lombok.Data;
 
 @Data
 @Builder
+
 public class Order {
   private Long orderPK;
   private Customer customer;
@@ -21,5 +22,7 @@ public class Order {
   @JsonIgnore
   public Long getOrderPK() {
     return orderPK;
-  }
-}
+  }//end LONG getOrderPK
+  
+  
+}//end CLASS Order
